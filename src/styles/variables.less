@@ -1,0 +1,52 @@
+
+@primary: #7c3aed;
+@primary-light: #a78bfa;
+@primary-dark: #5b21b6;
+@secondary: #ec4899;
+@accent: #06b6d4;
+@dark: #0f0f1a;
+@dark-card: #1a1a2e;
+@dark-border: #2d2d4e;
+@light: #f1f5f9;
+@gray: #94a3b8;
+@white: #ffffff;
+@font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+@font-size-base: 1rem;
+@line-height: 1.6;
+@space-xs: 0.25rem;
+@space-sm: 0.5rem;
+@space-md: 1rem;
+@space-lg: 2rem;
+@space-xl: 4rem;
+@bp-mobile: ~"(max-width: 640px)";
+@bp-tablet: ~"(max-width: 1024px)";
+.flex(@dir: row, @justify: center, @align: center) {
+  display: flex;
+  flex-direction: @dir;
+  justify-content: @justify;
+  align-items: @align;
+}
+
+.transition(@props: all, @dur: 0.3s, @ease: ease) {
+  transition: @props @dur @ease;
+}
+
+.gradient-text(@from: @primary, @to: @secondary) {
+  background: linear-gradient(135deg, @from, @to);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glass-card() {
+  background: rgba(@dark-card, 0.8);
+  border: 1px solid @dark-border;
+  backdrop-filter: blur(10px);
+}
+
+.hover-lift() {
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(@primary, 0.2);
+  }
+}

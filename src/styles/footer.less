@@ -1,0 +1,216 @@
+@import "variables";
+.footer {
+  background: rgba(0, 0, 0, 0.4);
+  border-top: 1px solid @dark-border;
+  margin-top: 4rem;
+  &__main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem 3rem;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 3rem;
+
+    @media @bp-tablet {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media @bp-mobile {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+  &__brand {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  &__logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    .gradient-text(@primary-light, @secondary);
+    display: inline-block;
+    width: fit-content;
+  }
+
+  &__tagline {
+    font-size: 0.9rem;
+    color: @gray;
+    line-height: 1.7;
+    max-width: 260px;
+  }
+  &__newsletter {
+    margin-top: 0.5rem;
+
+    form {
+      display: flex;
+      gap: 0;
+      border: 1px solid @dark-border;
+      border-radius: 10px;
+      overflow: hidden;
+      background: rgba(@white, 0.04);
+      .transition(border-color);
+
+      &:focus-within {
+        border-color: rgba(@primary, 0.5);
+      }
+
+      input {
+        flex: 1;
+        background: none;
+        border: none;
+        outline: none;
+        padding: 0.65rem 1rem;
+        font-size: 0.85rem;
+        color: @white;
+        min-width: 0;
+
+        &::placeholder {
+          color: @gray;
+        }
+      }
+
+      button {
+        padding: 0.65rem 1rem;
+        background: @primary;
+        color: @white;
+        border: none;
+        font-size: 0.85rem;
+        font-weight: 600;
+        cursor: pointer;
+        .transition(background);
+        white-space: nowrap;
+
+        &:hover {
+          background: @primary-dark;
+        }
+      }
+    }
+
+    &-label {
+      display: block;
+      font-size: 0.78rem;
+      color: @gray;
+      margin-bottom: 0.5rem;
+    }
+  }
+  &__col {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  &__col-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: @white;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  &__col-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+
+    a {
+      font-size: 0.88rem;
+      color: @gray;
+      text-decoration: none;
+      .transition(color);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+
+      &::before {
+        content: '›';
+        opacity: 0;
+        margin-left: -0.75rem;
+        .transition(opacity margin-left);
+      }
+
+      &:hover {
+        color: @primary-light;
+
+        &::before {
+          opacity: 1;
+          margin-left: 0;
+        }
+      }
+    }
+  }
+  &__social {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+
+    &-link {
+      width: 38px;
+      height: 38px;
+      border: 1px solid @dark-border;
+      border-radius: 10px;
+      .flex();
+      font-size: 1rem;
+      text-decoration: none;
+      .transition();
+      background: rgba(@white, 0.03);
+
+      &:hover {
+        border-color: @primary;
+        background: rgba(@primary, 0.15);
+        transform: translateY(-3px);
+      }
+    }
+  }
+  &__bottom {
+    border-top: 1px solid @dark-border;
+    padding: 1.25rem 2rem;
+
+    &-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+
+      @media @bp-mobile {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  }
+
+  &__copy {
+    font-size: 0.82rem;
+    color: @gray;
+
+    a {
+      color: @primary-light;
+      text-decoration: none;
+
+      &:hover { text-decoration: underline; }
+    }
+  }
+
+  &__legal {
+    display: flex;
+    gap: 1.5rem;
+
+    a {
+      font-size: 0.82rem;
+      color: @gray;
+      text-decoration: none;
+      .transition(color);
+
+      &:hover {
+        color: @primary-light;
+      }
+    }
+  }
+}

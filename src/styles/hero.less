@@ -1,0 +1,220 @@
+@import "variables";
+.hero {
+  min-height: 100vh;
+  .flex(column, center, center);
+  text-align: center;
+  padding: 7rem 2rem 3rem;
+  position: relative;
+  overflow: hidden;
+  &__bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.15;
+
+      &--1 {
+        width: 600px;
+        height: 600px;
+        background: @primary;
+        top: -200px;
+        left: -150px;
+        animation: blobMove 12s ease-in-out infinite;
+      }
+
+      &--2 {
+        width: 400px;
+        height: 400px;
+        background: @secondary;
+        bottom: -100px;
+        right: -100px;
+        animation: blobMove 16s ease-in-out infinite reverse;
+      }
+
+      &--3 {
+        width: 300px;
+        height: 300px;
+        background: @accent;
+        top: 50%;
+        left: 60%;
+        animation: blobMove 10s ease-in-out infinite 2s;
+      }
+    }
+  }
+  &__content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+  }
+
+  &__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 1.2rem;
+    background: rgba(@primary, 0.15);
+    border: 1px solid rgba(@primary, 0.3);
+    border-radius: 50px;
+    font-size: 0.85rem;
+    color: @primary-light;
+    margin-bottom: 1.5rem;
+
+    &-dot {
+      width: 6px;
+      height: 6px;
+      background: @accent;
+      border-radius: 50%;
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+  }
+
+  &__title {
+    font-size: clamp(2.8rem, 7vw, 5rem);
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+
+    .gradient {
+      .gradient-text(@primary-light, @secondary);
+    }
+  }
+
+  &__description {
+    font-size: 1.15rem;
+    color: @gray;
+    max-width: 580px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.8;
+  }
+
+  &__actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 3.5rem;
+  }
+  &__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.85rem 2rem;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    border: none;
+    .transition();
+
+    &--primary {
+      background: @primary;
+      color: @white;
+
+      &:hover {
+        background: @primary-dark;
+        transform: translateY(-2px);
+        box-shadow: 0 12px 30px rgba(@primary, 0.4);
+      }
+    }
+
+    &--secondary {
+      background: transparent;
+      color: @white;
+      border: 1px solid @dark-border;
+
+      &:hover {
+        border-color: rgba(@primary-light, 0.5);
+        color: @primary-light;
+        transform: translateY(-2px);
+      }
+    }
+  }
+  &__stats {
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 1px;
+      background: @dark-border;
+    }
+  }
+
+  &__stat {
+    text-align: center;
+
+    &-value {
+      font-size: 2rem;
+      font-weight: 800;
+      .gradient-text(@primary-light, @accent);
+      display: block;
+    }
+
+    &-label {
+      font-size: 0.8rem;
+      color: @gray;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+  }
+  &__scroll {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    color: @gray;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    animation: bounceDown 2s ease-in-out infinite;
+
+    &-arrow {
+      font-size: 1.2rem;
+    }
+  }
+
+  @media @bp-mobile {
+    &__title {
+      font-size: 2.5rem;
+    }
+
+    &__stats {
+      gap: 1.5rem;
+    }
+  }
+}
+
+@keyframes blobMove {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -30px) scale(1.05); }
+  66% { transform: translate(-20px, 20px) scale(0.95); }
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.7); }
+}
+
+@keyframes bounceDown {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(8px); }
+}

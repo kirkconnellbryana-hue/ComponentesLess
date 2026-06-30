@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>5 Componentes — Mar y Playas</title>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar__logo">🐚 PlayaVerde</div>
+    <ul class="navbar__links" id="links">
+      <li><a href="#hero">Inicio</a></li>
+      <li><a href="#cards">Destinos</a></li>
+      <li><a href="#half">Nosotros</a></li>
+      <li><a href="#footer">Contacto</a></li>
+    </ul>
+    <button class="navbar__burger" id="burger">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <section class="hero" id="hero">
+    <h1 class="hero__titulo">Descubre el paraíso 🌊</h1>
+    <p class="hero__desc">Encuentra las playas más hermosas del mundo y vive experiencias únicas junto al mar.</p>
+    <a href="#cards" class="hero__btn">Explorar destinos</a>
+  </section>
+
+  <section id="cards">
+    <div class="cards-seccion">
+      <h2 class="cards-seccion__titulo">Destinos destacados</h2>
+      <div class="cards-seccion__linea"></div>
+      <div class="cards-grid">
+
+        <div class="card">
+          <img class="card__img" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80" alt="Playa tropical" />
+          <div class="card__cuerpo">
+            <span class="card__tag">Tropical</span>
+            <h3 class="card__titulo">Playa Blanca, Caribe</h3>
+            <p class="card__desc">Arena blanca, agua cristalina y palmeras. El destino perfecto para desconectarse.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img class="card__img" src="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=600&q=80" alt="Surf" />
+          <div class="card__cuerpo">
+            <span class="card__tag">Surf</span>
+            <h3 class="card__titulo">Punta Roca, El Salvador</h3>
+            <p class="card__desc">Una de las mejores olas derechas del mundo. Ideal para surfistas de todos los niveles.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img class="card__img" src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&q=80" alt="Buceo" />
+          <div class="card__cuerpo">
+            <span class="card__tag">Buceo</span>
+            <h3 class="card__titulo">Gran Barrera de Coral</h3>
+            <p class="card__desc">El arrecife más grande del mundo con miles de especies marinas por descubrir.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img class="card__img" src="https://images.unsplash.com/photo-1533104816931-20fa691ff6ca?w=600&q=80" alt="Atardecer" />
+          <div class="card__cuerpo">
+            <span class="card__tag">Romántico</span>
+            <h3 class="card__titulo">Tulum, México</h3>
+            <p class="card__desc">Ruinas mayas sobre el mar Caribe. Cenotes y playas de ensueño en un solo lugar.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img class="card__img" src="https://images.unsplash.com/photo-1573843981267-be1999ff37cd?w=600&q=80" alt="Kayak" />
+          <div class="card__cuerpo">
+            <span class="card__tag">Aventura</span>
+            <h3 class="card__titulo">Bocas del Toro, Panamá</h3>
+            <p class="card__desc">Kayak entre manglares, snorkel con delfines y cabañas sobre el agua.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img class="card__img" src="https://images.unsplash.com/photo-1559628233-100c798642d9?w=600&q=80" alt="Isla" />
+          <div class="card__cuerpo">
+            <span class="card__tag">Isla</span>
+            <h3 class="card__titulo">Roatán, Honduras</h3>
+            <p class="card__desc">Isla caribeña con arrecifes de coral, cocoteros y aguas de color turquesa.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="half">
+    <div class="half-panel">
+
+      <div class="half-panel__item">
+        <div class="half-panel__texto">
+          <p class="half-panel__etiqueta">Quiénes somos</p>
+          <h2 class="half-panel__titulo">Amamos el mar tanto como tú</h2>
+          <p class="half-panel__desc">Somos un equipo de viajeros apasionados por el océano. Llevamos más de 10 años ayudando a personas a encontrar su playa perfecta, desde pequeñas calas escondidas hasta paradisíacas islas tropicales.</p>
+          <a href="#footer" class="half-panel__btn">Conoce al equipo</a>
+        </div>
+        <div class="half-panel__imagen">
+          <img src="https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?w=700&q=80" alt="Equipo en la playa" />
+        </div>
+      </div>
+
+      <div class="half-panel__item half-panel__item--inv">
+        <div class="half-panel__texto">
+          <p class="half-panel__etiqueta">Nuestra misión</p>
+          <h2 class="half-panel__titulo">Playas para todos, siempre</h2>
+          <p class="half-panel__desc">Creemos que el mar es de todos. Por eso ofrecemos guías gratuitas, recomendaciones honestas y una comunidad activa de viajeros que comparten su amor por el océano y los destinos costeros.</p>
+          <a href="#cards" class="half-panel__btn">Ver destinos</a>
+        </div>
+        <div class="half-panel__imagen">
+          <img src="https://images.unsplash.com/photo-1484821582734-6c6c9f99a672?w=700&q=80" alt="Playa solitaria" />
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer" id="footer">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__logo">🐚 PlayaVerde</div>
+        <p class="footer__desc">Tu guía de viajes al mar. Descubre playas, planea aventuras y vive el océano.</p>
+      </div>
+      <div>
+        <h4 class="footer__col-titulo">Destinos</h4>
+        <ul class="footer__col-links">
+          <li><a href="#">Caribe</a></li>
+          <li><a href="#">Pacífico</a></li>
+          <li><a href="#">Mediterráneo</a></li>
+          <li><a href="#">Oceanía</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer__col-titulo">Contacto</h4>
+        <ul class="footer__col-links">
+          <li><a href="#">info@playaverde.com</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">YouTube</a></li>
+          <li><a href="#">Newsletter</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer__copy">© 2026 PlayaVerde — Hecho con Vite + LESS 🌊</p>
+  </footer>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
